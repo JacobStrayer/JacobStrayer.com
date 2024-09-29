@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
-    <Navbar />
-    <router-view />
-    <Footer />
-  </div>
+    <div id="app">
+        <Navbar />
+        <router-view />
+        <Footer />
+    </div>
 </template>
 
 <script setup>
@@ -14,15 +14,15 @@ import Footer from './components/FooterBar.vue'
 <style>
 /* Global Styles */
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #181818;
-  color: #fff;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #181818;
+    color: #fff;
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 </style>

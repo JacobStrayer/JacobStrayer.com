@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
-    <HeroSection />
-    <SkillGrid />
-  </div>
+    <div class="home">
+        <HeroSection />
+        <SkillGrid />
+    </div>
 </template>
 
 <script setup>
@@ -12,6 +12,6 @@ import SkillGrid from '../components/SkillGrid.vue'
 
 <style scoped>
 .home {
-  padding: 20px;
+    padding: 20px;
 }
 </style>
