@@ -1,0 +1,55 @@
+<template>
+  <div class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <ProjectCard v-for="project in projects" :key="project.title" :project="project" />
+    </div>
+  </div>
+</template>
+
+<script setup>
+import ProjectCard from '../components/ProjectCard.vue'
+
+const projects = [
+  {
+    title: 'AI ChatBot',
+    description:
+      'Worked with a small team to use Python, React, and AWS, to host an AI ChatBot for an Investor Relations company.',
+    link: 'https://www.red.chat/',
+    image: '/images/promo_logo.png'
+  },
+  {
+    title: 'The Promo App',
+    description:
+      'Worked with Senior Developers to create a mobile application through React Native and NodeJS.',
+    link: 'https://play.google.com/store/apps/details?id=com.promoapp.promo&hl=en_US&pli=1',
+    image: '/images/promo_logo.png'
+  },
+  {
+    title: 'The Promo App 2',
+    description:
+      'Worked with Senior Developers to create a mobile application through React Native and NodeJS.',
+    link: 'https://play.google.com/store/apps/details?id=com.promoapp.promo&hl=en_US&pli=1',
+    image: '/images/promo_logo.png'
+  },
+  {
+    title: 'The Promo App 3',
+    description:
+      'Worked with Senior Developers to create a mobile application through React Native and NodeJS.',
+    link: 'https://play.google.com/store/apps/details?id=com.promoapp.promo&hl=en_US&pli=1',
+    image: '/images/promo_logo.png'
+  }
+]
+</script>
+
+<style scoped>
+.projects {
+  padding: 20px;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+</style>
