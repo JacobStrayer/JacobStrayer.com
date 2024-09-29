@@ -1,10 +1,13 @@
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <a class="nav-logo" href="/"> MyPortfolio </a>
+      <a class="nav-logo" href="/"> Jacob Strayer </a>
       <ul class="nav-menu">
         <li class="nav-item">
           <router-link class="nav-link" to="/">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/resume">Resume</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/projects">Projects</router-link>

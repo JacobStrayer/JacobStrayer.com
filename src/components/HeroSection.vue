@@ -2,11 +2,6 @@
   <div class="hero-section">
     <h1>Full-Stack Developer | API Expert | AWS Specialist</h1>
     <p>Building scalable APIs and interactive user interfaces.</p>
-    <div class="links">
-      <a href="#">GitHub</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Download Resume</a>
-    </div>
   </div>
 </template>
 
