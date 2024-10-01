@@ -28,18 +28,29 @@ const skillCategories = [
 
 <style scoped>
 .skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); /* Dynamically adjusts columns */
-    gap: 20px;
+    display: flex;
+    justify-content: space-around;
     padding: 50px 0;
-    justify-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .skill-category {
     width: 30%;
+    min-width: 250px;
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
 }
 
 h3 {
     color: #00b4d8;
+    margin-bottom: 10px;
 }
 </style>
