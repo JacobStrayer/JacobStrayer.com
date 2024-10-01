@@ -4,8 +4,8 @@
         <p>Building scalable APIs and interactive user interfaces.</p>
     </div>
     <div class="hero-buttons">
-        <a href="/resume" class="btn">View Resume</a>
-        <a href="/projects" class="btn btn-secondary">View Projects</a>
+        <router-link class="btn" to="/resume">View Resume</router-link>
+        <router-link class="btn btn-secondary" to="/projects">View Projects</router-link>
     </div>
 </template>
 
