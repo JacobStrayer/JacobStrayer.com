@@ -4,9 +4,9 @@
         <div class="project-content">
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
-            <a :href="project.link" target="_blank">View Project</a>
+            <a onclick="handleViewProject()">View Project</a>
         </div>
-        <img :src="project.image" alt="Project Image" class="project-image" />
+        <img v-if="project.image" :src="project.image" alt="Project Image" class="project-image" />
     </div>
 </template>
 
@@ -14,20 +14,20 @@
 const props = defineProps({
     project: Object
 })
+// const handleViewProject {
+// }
 </script>
 
 <style scoped>
 .project-card {
     background: #242424;
     padding: 20px;
-    border-radius: 8px;
-    width: 45%;
+    border-radius: 13px;
     color: #fff;
-    max-width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 a {

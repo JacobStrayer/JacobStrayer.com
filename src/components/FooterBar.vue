@@ -2,8 +2,8 @@
     <footer>
         <p>&copy; 2024 Jacob Strayer. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://github.com/jacobstrayer">GitHub</a>
-            <a href="https://linkedin.com/in/jacob-strayer/">LinkedIn</a>
+            <a href="https://github.com/jacobstrayer" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/jacob-strayer/" target="_blank">LinkedIn</a>
         </div>
     </footer>
 </template>
