@@ -48,8 +48,8 @@ const projects = [
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamically adjusts columns */
-    gap: 40px; /* Space between cards */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamically adjusts columns */
+    gap: 20px;
     padding-right: 20px;
 }
 </style>
