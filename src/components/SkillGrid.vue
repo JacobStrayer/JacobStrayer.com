@@ -28,9 +28,11 @@ const skillCategories = [
 
 <style scoped>
 .skill-grid {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); /* Dynamically adjusts columns */
+    gap: 20px;
     padding: 50px 0;
+    justify-items: center;
 }
 
 .skill-category {

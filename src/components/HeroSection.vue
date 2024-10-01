@@ -9,7 +9,6 @@
 .hero-section {
     text-align: center;
     padding: 100px 20px;
-    background-image: url('/path-to-your-background-image.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;

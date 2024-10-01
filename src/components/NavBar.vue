@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .navbar {
-    background-color: #242424;
+    background-color: #181818;
     padding: 15px 20px;
     display: flex;
     justify-content: center;
@@ -51,7 +51,6 @@ export default {
 
 .nav-container {
     width: 100%;
-    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
