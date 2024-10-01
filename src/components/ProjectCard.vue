@@ -1,21 +1,29 @@
 <!-- eslint-disable no-unused-vars -->
 <template>
     <div class="project-card">
-        <div class="project-content">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.description }}</p>
-            <a onclick="handleViewProject()">View Project</a>
-        </div>
-        <img v-if="project.image" :src="project.image" alt="Project Image" class="project-image" />
+      <div class="project-content">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a @click="handleViewProject(project.link)" class="view-project">View Project</a>
+      </div>
+      <img v-if="project.image" :src="project.image" alt="Project Image" class="project-image" />
     </div>
-</template>
+  </template>
 
 <script setup>
 const props = defineProps({
     project: Object
 })
-// const handleViewProject {
-// }
+
+function handleViewProject(link) {
+  if (link.startsWith('http')) {
+    // External link, open in a new tab
+    window.open(link, '_blank');
+  } else {
+    // Internal link, redirect in the same tab
+    window.location.href = link;
+  }
+}
 </script>
 
 <style scoped>

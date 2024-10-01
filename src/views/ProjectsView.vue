@@ -27,15 +27,15 @@ const projects = [
     },
     {
         title: 'Portfolio',
-        description: 'Used Vue and AWS Amplify to host my portfolio.',
-        link: '#',
+        description: 'Used Vue and GitHub Pages to host my portfolio.',
+        link: '/',
         image: ''
     },
     {
         title: 'Spotify Activity Tweeter',
         description:
             'Created a python script to scrape live user activity and tweet the current song being listened to (if currently listening).',
-        link: 'https://play.google.com/store/apps/details?id=com.promoapp.promo&hl=en_US&pli=1',
+        link: '#',
         image: ''
     }
 ]
