@@ -15,7 +15,7 @@ const projects = [
         title: 'AI ChatBot',
         description:
             'Worked with a small team to use Python, React, and AWS, to host an AI ChatBot for an Investor Relations company.',
-        link: 'https://www.red.chat/',
+        link: '/redchat',
         image: '/images/redchip-logo-small.png'
     },
     {
