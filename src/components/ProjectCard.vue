@@ -55,4 +55,15 @@ a {
     display: block;
     object-fit: contain;
 }
+
+.view-project {
+    color: var(--accent-secondary); /* Use your theme's primary color */
+    text-decoration: none;
+    cursor: pointer; /* Ensures the cursor changes to a pointer */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.view-project:hover {
+    color: var(--accent-hover); /* Color change on hover for better UX */
+}
 </style>
