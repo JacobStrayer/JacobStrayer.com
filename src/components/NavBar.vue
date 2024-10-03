@@ -1,7 +1,10 @@
 <template>
     <nav class="navbar">
         <div class="nav-container">
-            <a class="nav-logo" href="/"> Jacob Strayer </a>
+            <div class="logo">
+                <img src="/favicon/favicon-32x32.png" href="/"/>
+                <a class="nav-logo" href="/"> Jacob Strayer </a>
+            </div>
             <button class="hamburger" @click="toggleMenu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -58,7 +61,7 @@ export default {
 
 .nav-logo {
     font-size: 24px;
-    color: #00b4d8;
+    color: #920ae0;
     text-decoration: none;
     font-weight: bold;
 }
@@ -91,6 +94,15 @@ export default {
     cursor: pointer;
     border: none;
     background: none;
+}
+
+.logo {
+    display:flex;
+    align-items: center;
+}
+.logo img {
+    height: 100%;
+    width: 1.5rem;
 }
 
 .hamburger .bar {

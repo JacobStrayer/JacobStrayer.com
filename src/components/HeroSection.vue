@@ -31,25 +31,12 @@
 }
 
 .btn {
-    background-color: #00b4d8;
     color: #fff;
     padding: 10px 20px;
     margin: 1rem;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0077b6;
-}
-
-.btn-secondary {
-    background-color: #03045e;
-}
-
-.btn-secondary:hover {
-    background-color: #023e8a;
 }
 
 </style>

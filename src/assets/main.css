@@ -22,6 +22,7 @@ h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
     font-weight: bold;
+    color: #920ae0;
 }
 
 p, ul {
@@ -38,6 +39,14 @@ a,
     color: hsla(160, 100%, 37%, 1);
     transition: 0.4s;
     padding: 3px;
+}
+
+.btn {
+    background-color: #720aad;
+}
+
+.btn:hover {
+    background-color: #5b088b;
 }
 
 @media (hover: hover) {

@@ -50,7 +50,6 @@ const skillCategories = [
 }
 
 h3 {
-    color: #00b4d8;
     margin-bottom: 10px;
 }
 </style>
