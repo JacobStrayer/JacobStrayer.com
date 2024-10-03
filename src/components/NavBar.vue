@@ -84,10 +84,6 @@ export default {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #00b4d8;
-}
-
 .hamburger {
     display: none;
     flex-direction: column;
