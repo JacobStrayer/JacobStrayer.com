@@ -21,6 +21,9 @@
                     <router-link class="nav-link" to="/projects">Projects</router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link class="nav-link" to="/about">About</router-link>
+                </li>
+                <li class="nav-item">
                     <router-link class="nav-link" to="/contact">Contact</router-link>
                 </li>
             </ul>
@@ -93,8 +96,9 @@ export default {
 }
 
 .logo {
-    display:flex;
+    display: flex;
     align-items: center;
+    gap: 10px;
 }
 .logo img {
     height: 100%;
