@@ -1,7 +1,7 @@
 <template>
     <div class="resume-container">
         <iframe
-            :src="`${s3Url}/documents/StrayerJacob_Resume.pdf`"
+            :src="`${s3Url}/StrayerJacob_Resume.pdf`"
             class="pdf-viewer"
             frameborder="0"
             width="100%"

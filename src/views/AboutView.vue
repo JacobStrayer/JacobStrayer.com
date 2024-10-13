@@ -9,8 +9,8 @@
         <h2>Non-Technical Hobbies</h2>
         <h3>Gardening</h3>
         <div class="section">
-            <img :src="`${s3Url}plant_image01.jpg`" alt="Plant Image 1" />
-            <img :src="`${s3Url}plant_image02.jpg`" alt="Plant Image 2" />
+            <img :src="`${s3Url}/plant_image01.jpg`" alt="Plant Image 1" />
+            <img :src="`${s3Url}/plant_image02.jpg`" alt="Plant Image 2" />
         </div>
     </div>
 </template>
