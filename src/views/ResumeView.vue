@@ -1,7 +1,7 @@
 <template>
     <div class="resume-container">
         <iframe
-            src="/documents/StrayerJacob_Resume.pdf"
+            :src="`${s3Url}/documents/StrayerJacob_Resume.pdf`"
             class="pdf-viewer"
             frameborder="0"
             width="100%"
@@ -10,7 +10,10 @@
         </iframe>
     </div>
 </template>
-
+<script setup>
+// Access the environment variable
+const s3Url = import.meta.env.VITE_S3_BUCKET_URL;
+</script>
 <style scoped>
 .resume-container {
     padding: 20px;

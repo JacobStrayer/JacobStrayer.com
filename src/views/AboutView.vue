@@ -9,14 +9,15 @@
         <h2>Non-Technical Hobbies</h2>
         <h3>Gardening</h3>
         <div class="section">
-            <img src="/images/plant_image01.jpg" />
-            <img src="/images/plant_image02.jpg" />
+            <img :src="`${s3Url}plant_image01.jpg`" alt="Plant Image 1" />
+            <img :src="`${s3Url}plant_image02.jpg`" alt="Plant Image 2" />
         </div>
-        
     </div>
 </template>
 
-
+<script setup>
+const s3Url = import.meta.env.VITE_S3_BUCKET_URL;
+</script>
 
 <style scoped>
 .about {
@@ -33,5 +34,4 @@ img {
     justify-content: center;
     gap: 10px;
 }
-
 </style>
