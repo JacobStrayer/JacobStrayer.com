@@ -1,5 +1,8 @@
 <template>
+  <div class="boids-field">
+    <h2>Boids AI</h2>
     <canvas ref="canvasRef" class="boids-canvas"></canvas>
+  </div>
 </template>
 
 <script setup>
@@ -232,6 +235,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.boids-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .boids-canvas {
     display: block;
     background: #251b1b;
