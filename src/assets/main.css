@@ -25,13 +25,13 @@ h3 {
     color: var(--accent-secondary);
 }
 
-p, ul {
+p,
+ul {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
     color: #f0f4f8;
 }
-
 
 a,
 .green {

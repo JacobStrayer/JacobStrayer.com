@@ -12,7 +12,7 @@
 </template>
 <script setup>
 // Access the environment variable
-const s3Url = import.meta.env.VITE_S3_BUCKET_URL;
+const s3Url = import.meta.env.VITE_S3_BUCKET_URL
 </script>
 <style scoped>
 .resume-container {

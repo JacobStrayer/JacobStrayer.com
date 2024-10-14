@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="/favicon/favicon-32x32.png" href="/"/>
+                <img src="/favicon/favicon-32x32.png" href="/" />
                 <a class="nav-logo" href="/"> Jacob Strayer </a>
             </div>
             <button class="hamburger" @click="toggleMenu">

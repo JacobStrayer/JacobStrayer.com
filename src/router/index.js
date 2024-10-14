@@ -11,8 +11,8 @@ const routes = [
     { path: '/projects', name: 'Projects', component: Projects },
     { path: '/contact', name: 'Contact', component: Contact },
     { path: '/resume', name: 'Resume', component: Resume },
-    { path: '/redchat', name: 'RedChat', component: RedChat},
-    { path: '/about', name: 'About', component: About}
+    { path: '/redchat', name: 'RedChat', component: RedChat },
+    { path: '/about', name: 'About', component: About }
 ]
 
 const router = createRouter({
