@@ -16,7 +16,7 @@ class Boid {
     this.maxForce = 0.03;
   }
 
-  update() {
+  update(canvasHeight, canvasWidth) {
     this.velocity.x += this.acceleration.x;
     this.velocity.y += this.acceleration.y;
     this.velocity.x = Math.max(-this.maxSpeed, Math.min(this.velocity.x, this.maxSpeed));
@@ -25,13 +25,24 @@ class Boid {
     this.position.y += this.velocity.y;
     this.acceleration.x = 0;
     this.acceleration.y = 0;
-    
+
+    if (this.position.x > canvasWidth) {
+      this.position.x = 0;
+    } else if (this.position.x < 0) {
+      this.position.x = canvasWidth;
+    }
+
+    if (this.position.y > canvasHeight) {
+      this.position.y = 0;
+    } else if (this.position.y < 0) {
+      this.position.y = canvasHeight;
+    }
   }
 
   draw(context) {
     context.beginPath();
     context.arc(this.position.x, this.position.y, 3, 0, Math.PI * 2);
-    context.fillStyle = "#00b4d8";
+    context.fillStyle = "#b2b2b2";
     context.fill();
   }
 
@@ -178,7 +189,7 @@ onMounted(() => {
       context.clearRect(0, 0, canvas.width, canvas.height);
       for (let boid of boids) {
         boid.flock(boids);
-        boid.update();
+        boid.update(canvas.height, canvas.width);
         boid.draw(context);
       }
       requestAnimationFrame(animate);
@@ -192,8 +203,8 @@ onMounted(() => {
 <style scoped>
 .boids-canvas {
   display: block;
-  background: #942222;
-  width: 100vw;
-  height: 100vh;
+  background: #251b1b;
+  width: 50vw;
+  height: 50vh;
 }
 </style>
