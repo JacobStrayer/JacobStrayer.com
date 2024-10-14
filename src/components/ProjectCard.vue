@@ -1,14 +1,14 @@
 <!-- eslint-disable no-unused-vars -->
 <template>
     <div class="project-card">
-      <div class="project-content">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        <a @click="handleViewProject(project.link)" class="view-project">View Project</a>
-      </div>
-      <img v-if="project.image" :src="project.image" alt="Project Image" class="project-image" />
+        <div class="project-content">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <a @click="handleViewProject(project.link)" class="view-project">View Project</a>
+        </div>
+        <img v-if="project.image" :src="project.image" alt="Project Image" class="project-image" />
     </div>
-  </template>
+</template>
 
 <script setup>
 const props = defineProps({
@@ -16,13 +16,13 @@ const props = defineProps({
 })
 
 function handleViewProject(link) {
-  if (link.startsWith('http')) {
-    // External link, open in a new tab
-    window.open(link, '_blank');
-  } else {
-    // Internal link, redirect in the same tab
-    window.location.href = link;
-  }
+    if (link.startsWith('http')) {
+        // External link, open in a new tab
+        window.open(link, '_blank')
+    } else {
+        // Internal link, redirect in the same tab
+        window.location.href = link
+    }
 }
 </script>
 
@@ -60,7 +60,9 @@ a {
     color: var(--accent-secondary); /* Use your theme's primary color */
     text-decoration: none;
     cursor: pointer; /* Ensures the cursor changes to a pointer */
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
 }
 
 .view-project:hover {
