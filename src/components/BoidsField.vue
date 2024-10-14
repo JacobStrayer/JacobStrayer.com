@@ -8,12 +8,13 @@ import { onMounted, ref, nextTick } from 'vue';
 const canvasRef = ref(null);
 
 class Boid {
-  constructor(x, y) {
+  constructor(x, y, size) {
     this.position = { x, y };
     this.velocity = { x: Math.random() * 2 - 1, y: Math.random() * 2 - 1 };
     this.acceleration = { x: 0, y: 0 };
     this.maxSpeed = 2;
     this.maxForce = 0.03;
+    this.size = size;
   }
 
   update(canvasHeight, canvasWidth) {
@@ -26,6 +27,7 @@ class Boid {
     this.acceleration.x = 0;
     this.acceleration.y = 0;
 
+    // Screen wrapping logic: if the boid goes out of bounds, wrap it to the opposite side
     if (this.position.x > canvasWidth) {
       this.position.x = 0;
     } else if (this.position.x < 0) {
@@ -41,7 +43,7 @@ class Boid {
 
   draw(context) {
     context.beginPath();
-    context.arc(this.position.x, this.position.y, 3, 0, Math.PI * 2);
+    context.arc(this.position.x, this.position.y, this.size, 0, Math.PI * 2);
     context.fillStyle = "#b2b2b2";
     context.fill();
   }
@@ -56,7 +58,7 @@ class Boid {
     let count = 0;
     for (let other of boids) {
       const distance = this.distance(other);
-      if (other !== this && distance < 50) {
+      if (other !== this && distance < 50 && other.size > this.size) {
         avgPos.x += other.position.x;
         avgPos.y += other.position.y;
         count++;
@@ -126,9 +128,19 @@ class Boid {
     let count = 0;
     for (let other of boids) {
       const distance = this.distance(other);
-      if (other !== this && distance < 25) {
-        steer.x += this.position.x - other.position.x;
-        steer.y += this.position.y - other.position.y;
+      const combinedSize = this.size + other.size;
+
+      if (other !== this && distance < combinedSize + 10) { 
+        const diff = {
+          x: this.position.x - other.position.x,
+          y: this.position.y - other.position.y,
+        };
+        // stronger forces based on distance
+        const mag = Math.sqrt(diff.x * diff.x + diff.y * diff.y);
+        diff.x = (diff.x / mag) * this.maxSpeed;
+        diff.y = (diff.y / mag) * this.maxSpeed;
+        steer.x += diff.x;
+        steer.y += diff.y;
         count++;
       }
     }
@@ -175,6 +187,21 @@ onMounted(() => {
     }
 
     const boids = [];
+    const sizes = [3, 5, 7, 9];
+
+    const sizeProbabilities = [0.6, 0.25, 0.1, 0.05]
+    function getRandomSize() {
+      const randomValue = Math.random()
+      let cumulativeProbability = 0
+
+      for (let i = 0; i < sizes.length; i++) {
+        cumulativeProbability += sizeProbabilities[i]
+        if (randomValue < cumulativeProbability) {
+          return sizes[i]
+        }
+      }
+      return sizes[0]
+    }
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -182,7 +209,8 @@ onMounted(() => {
     for (let i = 0; i < 100; i++) {
       const x = Math.random() * canvas.width;
       const y = Math.random() * canvas.height;
-      boids.push(new Boid(x, y));
+      const size = getRandomSize()
+      boids.push(new Boid(x, y, size));
     }
 
     function animate() {
