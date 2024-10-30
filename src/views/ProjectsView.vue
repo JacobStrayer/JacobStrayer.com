@@ -4,11 +4,15 @@
         <div class="project-list">
             <ProjectCard v-for="project in projects" :key="project.title" :project="project" />
         </div>
+        <div>
+            <PasswordGenerator />
+        </div>
     </div>
 </template>
 
 <script setup>
 import ProjectCard from '../components/ProjectCard.vue'
+import PasswordGenerator from '@/components/passwordGenerator.vue';
 
 const projects = [
     {
