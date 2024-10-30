@@ -2,13 +2,15 @@
   <div class="boids-field">
     <h2>Boids AI</h2>
     <canvas ref="canvasRef" class="boids-canvas"></canvas>
+    <div class="boid-counter">Boids: {{ boidCount }}</div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref, nextTick } from 'vue'
+import { onMounted, ref, nextTick } from 'vue';
 
 const canvasRef = ref(null)
+const boidCount = ref(0);
 
 class Boid {
     constructor(x, y, size) {
@@ -30,18 +32,8 @@ class Boid {
         this.acceleration.x = 0
         this.acceleration.y = 0
 
-        // Screen wrapping logic: if the boid goes out of bounds, wrap it to the opposite side
-        if (this.position.x > canvasWidth) {
-            this.position.x = 0
-        } else if (this.position.x < 0) {
-            this.position.x = canvasWidth
-        }
-
-        if (this.position.y > canvasHeight) {
-            this.position.y = 0
-        } else if (this.position.y < 0) {
-            this.position.y = canvasHeight
-        }
+        this.position.x = (this.position.x + canvasWidth) % canvasWidth;
+        this.position.y = (this.position.y + canvasHeight) % canvasHeight;
     }
 
     draw(context) {
@@ -136,7 +128,7 @@ class Boid {
             const distance = this.distance(other)
             const combinedSize = this.size + other.size
 
-            if (other !== this && distance < combinedSize + 10) {
+            if (other !== this && distance < combinedSize * 2) {
                 const diff = {
                     x: this.position.x - other.position.x,
                     y: this.position.y - other.position.y
@@ -211,13 +203,15 @@ onMounted(() => {
 
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
-
-        for (let i = 0; i < 100; i++) {
+        console.log('canvas width height', canvas.width, canvas.height)
+        boidCount.value = Math.ceil(canvas.width * canvas.height * 0.00031)
+        for (let i = 0; i < boidCount.value; i++) {
             const x = Math.random() * canvas.width
             const y = Math.random() * canvas.height
             const size = getRandomSize()
             boids.push(new Boid(x, y, size))
         }
+        
 
         function animate() {
             context.clearRect(0, 0, canvas.width, canvas.height)
@@ -245,5 +239,12 @@ onMounted(() => {
     background: #251b1b;
     width: 50vw;
     height: 50vh;
+}
+.boid-counter {
+    color: #ffffff;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
 }
 </style>

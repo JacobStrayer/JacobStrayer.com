@@ -9,8 +9,14 @@
         <h2>Non-Technical Hobbies</h2>
         <h3>Gardening</h3>
         <div class="section">
+            <h4>Basil (Ocimum basilicum citriodorum)</h4>
             <img :src="`${s3Url}/plant_image01.jpg`" alt="Plant Image 1" />
             <img :src="`${s3Url}/plant_image02.jpg`" alt="Plant Image 2" />
+            <h4>Ivy (Hedera Helix)</h4>
+        </div>
+        <h3>Mead Brewing</h3>
+        <div class="section">
+            <h4>Mead Brewing</h4>
         </div>
     </div>
 </template>
