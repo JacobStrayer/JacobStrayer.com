@@ -96,10 +96,9 @@
   
   <style scoped>
   .password-generator {
-    background-color: var(--color-background);
-    color: var(--color-text-black);
+    background-color: var(--color-background-soft);
+    color: var(--color-text);
     padding: 1.5rem;
-    border: 1px solid var(--color-border);
     border-radius: 8px;
     max-width: 400px;
     margin: 0 auto;
@@ -116,7 +115,7 @@
   label {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    color: var(--color-text-black);
+    color: var(--color-text);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -127,7 +126,7 @@
     padding: 5px;
     border: 1px solid var(--color-border-hover);
     background-color: var(--color-background);
-    color: var(--color-text-black);
+    color: var(--color-text);
   }
   
   .generated-password {

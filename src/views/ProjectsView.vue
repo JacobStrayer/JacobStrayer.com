@@ -4,6 +4,7 @@
         <div class="project-list">
             <ProjectCard v-for="project in projects" :key="project.title" :project="project" />
         </div>
+        <h3>Useful Tools</h3>
         <div>
             <PasswordGenerator />
         </div>

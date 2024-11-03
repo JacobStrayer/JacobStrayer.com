@@ -1,4 +1,3 @@
-<!-- eslint-disable no-unused-vars -->
 <template>
     <div class="project-card">
         <div class="project-content">
@@ -28,7 +27,7 @@ function handleViewProject(link) {
 
 <style scoped>
 .project-card {
-    background: #242424;
+    background: var(--color-background-soft);
     padding: 20px;
     border-radius: 13px;
     color: #fff;
