@@ -9,24 +9,11 @@
     --accent-hover: #5b088b;
 
     --color-background: var(--vt-c-black); /* Set background to black */
+    --color-background-soft: #202020;
     --color-border: rgba(255, 255, 255, 0.2);
     --color-text: var(--vt-c-white); /* Set text to white for contrast */
+    --color-text-black: var(--vt-c-black);
     --color-heading: var(--vt-c-white);
-
-    --section-gap: 160px;
-}
-
-/* semantic color variables for this project */
-:root {
-    --color-background: var(--vt-c-white);
-    --color-background-soft: var(--vt-c-white-soft);
-    --color-background-mute: var(--vt-c-white-mute);
-
-    --color-border: var(--vt-c-divider-light-2);
-    --color-border-hover: var(--vt-c-divider-light-1);
-
-    --color-heading: var(--vt-c-text-light-1);
-    --color-text: var(--vt-c-text-light-1);
 
     --section-gap: 160px;
 }

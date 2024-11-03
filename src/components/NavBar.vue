@@ -116,12 +116,16 @@ export default {
 @media (max-width: 540px) {
     .nav-menu {
         position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
+        top: 50px;
+        right: 20px; 
         background-color: #242424;
         flex-direction: column;
-        display: none; /* Hidden by default */
+        display: none;
+        width: auto;
+        padding: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        border-radius: 5px;
     }
 
     .nav-menu.active {
@@ -129,8 +133,7 @@ export default {
     }
 
     .nav-item {
-        margin-left: 0;
-        margin-top: 10px;
+        margin: 5px 0;
         text-align: center;
     }
 
