@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>&copy; 2024 Jacob Strayer. All rights reserved.</p>
+        <p>&copy; 2025 Jacob Strayer. All rights reserved.</p>
         <div class="social-links">
             <a href="https://github.com/jacobstrayer" target="_blank">GitHub</a>
             <a href="https://linkedin.com/in/jacob-strayer/" target="_blank">LinkedIn</a>
@@ -19,7 +19,7 @@ footer {
 
 .social-links a {
     margin: 0 10px;
-    color: #00b4d8;
+    color: var(--accent-secondary);
     text-decoration: none;
 }
 </style>
