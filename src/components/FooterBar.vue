@@ -20,6 +20,6 @@ footer {
 .social-links a {
     margin: 0 10px;
     color: var(--accent-secondary);
-    text-decoration: none;
+    text-decoration: underline;
 }
 </style>
