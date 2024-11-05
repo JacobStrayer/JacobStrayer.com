@@ -38,6 +38,7 @@
         </label>
       </div>
       <button @click="generatePassword" class="btn">Generate</button>
+      <button @click="copyPassword" class="btn">Copy</button>
       <div v-if="password" class="generated-password">
         <strong>Password:</strong> {{ password }}
       </div>
@@ -89,6 +90,18 @@
         this.password = Array.from({ length: this.length })
           .map(() => characterPool[Math.floor(Math.random() * characterPool.length)])
           .join('')
+      },
+      async copyPassword() {
+        try {
+          if (this.password) {
+            await navigator.clipboard.writeText(this.password);
+            alert('Copied');
+          }
+          else
+            alert('Generate a password');
+        } catch($e) {
+          alert('Cannot copy');
+        }
       },
     },
   }
