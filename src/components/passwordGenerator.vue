@@ -1,54 +1,57 @@
 <template>
-    <div class="password-generator">
-      <h2>Password Generator</h2>
-      <div class="options">
-        <label>
-          Length:
-          <input
-            type="number"
-            v-model="length"
-            min="4"
-            max="32"
-            class="input"
-          />
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            v-model="useUppercase"
-          /> Uppercase Letters
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            v-model="useLowercase"
-          /> Lowercase Letters
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            v-model="useNumbers"
-          /> Numbers
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            v-model="useSpecialChars"
-          /> Special Characters
-        </label>
-      </div>
-      <button @click="generatePassword" class="btn">Generate</button>
-      <button @click="copyPassword" class="btn">Copy</button>
-      <div v-if="password" class="generated-password">
-        <strong>Password:</strong> {{ password }}
-      </div>
-      <div class="password-strength">
-        Strength: {{ passwordStrength }}
-      </div>
+  <div class="password-generator">
+    <h2>Password Generator</h2>
+    <div class="options">
+      <label>
+        Length:
+        <input
+          type="number"
+          v-model="length"
+          min="4"
+          max="32"
+          class="input"
+        />
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          v-model="useUppercase"
+        /> Uppercase Letters
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          v-model="useLowercase"
+        /> Lowercase Letters
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          v-model="useNumbers"
+        /> Numbers
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          v-model="useSpecialChars"
+        /> Special Characters
+      </label>
     </div>
-  </template>
+    <button @click="generatePassword" class="btn">Generate</button>
+    <button @click="copyPassword" class="btn">Copy</button>
+    <div v-if="password" class="generated-password">
+      <strong>Password:</strong> {{ password }}
+    </div>
+    <div class="password-strength">
+      Strength: {{ passwordStrength }}
+    </div>
+    <div v-if="showModal" class="copied-modal" @click="closeModal">
+      <div class="modal-content">{{ modalMessage }}</div>
+    </div>
+  </div>
+</template>
   
-  <script>
+<script>
   export default {
     data() {
       return {
@@ -58,6 +61,8 @@
         useNumbers: true,
         useSpecialChars: true,
         password: '',
+        showModal: false,
+        modalMessage: '',
       }
     },
     computed: {
@@ -94,20 +99,34 @@
       async copyPassword() {
         try {
           if (this.password) {
-            await navigator.clipboard.writeText(this.password);
-            alert('Copied');
+            await navigator.clipboard.writeText(this.password)
+            this.modalMessage = 'Copied'
+          } else {
+            this.modalMessage = 'Generate a password first'
           }
-          else
-            alert('Generate a password');
-        } catch($e) {
-          alert('Cannot copy');
+        } catch {
+          this.modalMessage = 'Cannot copy'
         }
+        this.showModal = true
+        setTimeout(this.addModalEventListeners, 50) // Generate a password first is getting cancelled out without this :/
+      },
+      closeModal() {
+        this.showModal = false
+        this.removeModalEventListeners()
+      },
+      addModalEventListeners() {
+        document.addEventListener('click', this.closeModal)
+        document.addEventListener('keydown', this.closeModal)
+      },
+      removeModalEventListeners() {
+        document.removeEventListener('click', this.closeModal)
+        document.removeEventListener('keydown', this.closeModal)
       },
     },
   }
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   .password-generator {
     background-color: var(--color-background-soft);
     color: var(--color-text);
@@ -157,8 +176,9 @@
   
   .btn {
     background-color: var(--accent-primary);
-    color: var(--vt-c-white);
+    color: var(--color-text);
     padding: 0.5rem 1rem;
+    margin: 0px 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -169,5 +189,25 @@
   .btn:hover {
     background-color: var(--accent-hover);
   }
-  </style>
+  .copied-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  }
+
+  .modal-content {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+</style>
   
