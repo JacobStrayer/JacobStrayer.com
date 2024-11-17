@@ -8,7 +8,7 @@ import About from '@/views/AboutView.vue'
 import Simulations from '@/views/SimulationsView.vue'
 import Deals from '@/views/DealsView.vue'
 import Share from '@/views/ShareView.vue'
-import AuthView from '@/views/auth/AuthView.vue' // Parent component
+import AuthView from '@/views/Auth/AuthView.vue' // Parent component
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
