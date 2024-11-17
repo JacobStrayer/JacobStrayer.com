@@ -15,6 +15,9 @@
                     <router-link class="nav-link" to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link class="nav-link" to="/auth">Login</router-link>
+                </li>
+                <li class="nav-item">
                     <router-link class="nav-link" to="/resume">Resume</router-link>
                 </li>
                 <li class="nav-item">
@@ -117,7 +120,7 @@ export default {
     .nav-menu {
         position: absolute;
         top: 50px;
-        right: 20px; 
+        right: 20px;
         background-color: #242424;
         flex-direction: column;
         display: none;
