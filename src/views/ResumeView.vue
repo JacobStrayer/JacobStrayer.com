@@ -11,8 +11,8 @@
     </div>
 </template>
 <script setup>
-// Access the environment variable
 const s3Url = import.meta.env.VITE_S3_BUCKET_URL
+console.log('s3', s3Url)
 </script>
 <style scoped>
 .resume-container {
